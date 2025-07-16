@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=<!DOCTYPE html>
-<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GetSet Certified - Landing</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      /* Animated Gradient Background */
       :root {
         --color-bg1: rgb(45, 0, 63);
         --color-bg2: rgb(0, 21, 41);
@@ -28,6 +23,7 @@
         position: fixed;
         top: 0;
         left: 0;
+        transform: scaleX(-1); /* Mirror horizontally */
         width: 100vw;
         height: 100vh;
         background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
@@ -36,7 +32,7 @@
       }
 
       .gradients-container {
-        filter: url(#goo) blur(40px);
+        filter: url(#goo) blur(30px); /* Reduced blur */
         width: 100%;
         height: 100%;
       }
@@ -61,7 +57,7 @@
         height: 100%;
         top: -50%;
         left: -50%;
-        opacity: 0.6;
+        opacity: 0.5;
       }
 
       @keyframes moveInCircle {
@@ -84,7 +80,6 @@
     </style>
   </head>
   <body class="min-h-screen w-full flex items-center justify-center">
-    <!-- SVG Filter -->
     <svg xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="goo">
@@ -95,7 +90,6 @@
       </defs>
     </svg>
 
-    <!-- Animated Background -->
     <div class="gradient-bg">
       <div class="gradients-container">
         <div class="g1"></div>
@@ -107,29 +101,24 @@
       <div class="interactive"></div>
     </div>
 
-    <!-- Content Layout -->
     <div class="relative z-10 flex flex-col md:flex-row w-full max-w-6xl p-6 gap-6 text-white">
-      <!-- Left Content -->
       <div class="flex-1 flex flex-col justify-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">GetSet Certified</h1>
         <p class="text-lg md:text-xl opacity-90">Empower your journey with industry-grade certifications. Flexible. Recognized. Trusted.</p>
       </div>
 
-      <!-- Right Content (Login/Signup Switch) -->
-      <div class="flex-1 bg-white text-gray-900 p-6 rounded-xl shadow-lg">
+      <div class="flex-1 bg-white/90 backdrop-blur-sm text-gray-900 p-6 rounded-xl shadow-lg">
         <div class="flex justify-around mb-4">
           <button id="showLogin" class="font-semibold text-blue-600">Login</button>
           <button id="showSignup" class="font-semibold text-blue-600">Signup</button>
         </div>
 
-        <!-- Login Form -->
         <div id="loginForm">
           <input type="email" placeholder="Email" class="w-full p-2 border rounded mb-3">
           <input type="password" placeholder="Password" class="w-full p-2 border rounded mb-3">
           <button class="w-full bg-blue-600 text-white py-2 rounded">Login</button>
         </div>
 
-        <!-- Signup Form -->
         <div id="signupForm" class="hidden">
           <input type="text" placeholder="Full Name" class="w-full p-2 border rounded mb-3">
           <input type="email" placeholder="Email" class="w-full p-2 border rounded mb-3">
@@ -152,31 +141,4 @@
       }
     </script>
   </body>
-</html>
-  <title>Animated Gradient Background</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
-</head>
-<body>
-  <div class="gradient-bg">
-    <svg xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-          <feBlend in="SourceGraphic" in2="goo" />
-        </filter>
-      </defs>
-    </svg>
-
-    <div class="gradients-container">
-      <div class="g1"></div>
-      <div class="g2"></div>
-      <div class="g3"></div>
-      <div class="g4"></div>
-      <div class="g5"></div>
-    </div>
-    <div class="interactive"></div>
-  </div>
-
-</body>
 </html>
